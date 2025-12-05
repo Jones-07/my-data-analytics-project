@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ad Campaign Analytics Data Structure -->
+<!-- This XML file contains ad campaign performance metrics and data -->
+<!-- Last Updated: December 5, 2025 -->
+
+<ad_campaigns_database>
+  <metadata>
+    <project_name>Ad Campaign Analytics</project_name>
+    <database_type>SQLite</database_type>
+    <created_date>2025-12-05</created_date>
+    <description>Marketing campaign performance analysis with KPI calculations</description>
+    <total_campaigns>5</total_campaigns>
+    <total_spend>8500</total_spend>
+    <total_revenue>109080</total_revenue>
+  </metadata>
+
+  <table name="ad_campaigns">
+    <schema>
+      <column name="campaign_id" type="INTEGER" primary_key="true" description="Unique campaign identifier"/>
+      <column name="campaign_name" type="TEXT" description="Campaign name and identifier"/>
+      <column name="platform" type="TEXT" description="Advertising platform (Google, Facebook, LinkedIn, etc.)"/>
+      <column name="start_date" type="TEXT" description="Campaign start date"/>
+      <column name="end_date" type="TEXT" description="Campaign end date"/>
+      <column name="impressions" type="INTEGER" description="Total ad impressions"/>
+      <column name="clicks" type="INTEGER" description="Total clicks on ads"/>
+      <column name="conversions" type="INTEGER" description="Total conversions/purchases"/>
+      <column name="total_spend" type="DECIMAL" description="Total advertising spend in USD"/>
+      <column name="revenue" type="DECIMAL" description="Total revenue generated in USD"/>
+      <column name="avg_order_value" type="DECIMAL" description="Average order value in USD"/>
+      <column name="customer_count" type="INTEGER" description="Total customers acquired"/>
+    </schema>
+
+    <records>
+      <campaign>
+        <campaign_id>1</campaign_id>
+        <campaign_name>Google Ads - Q4 2025</campaign_name>
+        <platform>Google</platform>
+        <start_date>2025-10-01</start_date>
+        <end_date>2025-12-05</end_date>
+        <impressions>50000</impressions>
+        <clicks>1200</clicks>
+        <conversions>180</conversions>
+        <total_spend>2400.00</total_spend>
+        <revenue>18000.00</revenue>
+        <avg_order_value>100.00</avg_order_value>
+        <customer_count>180</customer_count>
+        <metrics>
+          <ctr_percent>2.4</ctr_percent>
+          <cpc>2.0</cpc>
+          <cpa>13.33</cpa>
+          <roas>7.5</roas>
+          <roi_percent>650</roi_percent>
+        </metrics>
+      </campaign>
+
+      <campaign>
+        <campaign_id>2</campaign_id>
+        <campaign_name>Facebook - Holiday Campaign</campaign_name>
+        <platform>Facebook</platform>
+        <start_date>2025-11-15</start_date>
+        <end_date>2025-12-05</end_date>
+        <impressions>120000</impressions>
+        <clicks>3600</clicks>
+        <conversions>288</conversions>
+        <total_spend>1800.00</total_spend>
+        <revenue>25920.00</revenue>
+        <avg_order_value>90.00</avg_order_value>
+        <customer_count>288</customer_count>
+        <metrics>
+          <ctr_percent>3.0</ctr_percent>
+          <cpc>0.5</cpc>
+          <cpa>6.25</cpa>
+          <roas>14.4</roas>
+          <roi_percent>1340</roi_percent>
+        </metrics>
+      </campaign>
+
+      <campaign>
+        <campaign_id>3</campaign_id>
+        <campaign_name>LinkedIn - B2B Tech</campaign_name>
+        <platform>LinkedIn</platform>
+        <start_date>2025-10-15</start_date>
+        <end_date>2025-12-05</end_date>
+        <impressions>25000</impressions>
+        <clicks>500</clicks>
+        <conversions>50</conversions>
+        <total_spend>2500.00</total_spend>
+        <revenue>10000.00</revenue>
+        <avg_order_value>200.00</avg_order_value>
+        <customer_count>50</customer_count>
+        <metrics>
+          <ctr_percent>2.0</ctr_percent>
+          <cpc>5.0</cpc>
+          <cpa>50.0</cpa>
+          <roas>4.0</roas>
+          <roi_percent>300</roi_percent>
+        </metrics>
+      </campaign>
+
+      <campaign>
+        <campaign_id>4</campaign_id>
+        <campaign_name>Instagram - Brand Awareness</campaign_name>
+        <platform>Instagram</platform>
+        <start_date>2025-11-01</start_date>
+        <end_date>2025-12-05</end_date>
+        <impressions>85000</impressions>
+        <clicks>2550</clicks>
+        <conversions>127</conversions>
+        <total_spend>1700.00</total_spend>
+        <revenue>10160.00</revenue>
+        <avg_order_value>80.00</avg_order_value>
+        <customer_count>127</customer_count>
+        <metrics>
+          <ctr_percent>3.0</ctr_percent>
+          <cpc>0.67</cpc>
+          <cpa>13.39</cpa>
+          <roas>5.98</roas>
+          <roi_percent>498</roi_percent>
+        </metrics>
+      </campaign>
+
+      <campaign>
+        <campaign_id>5</campaign_id>
+        <campaign_name>Email Marketing - Retargeting</campaign_name>
+        <platform>Email</platform>
+        <start_date>2025-10-20</start_date>
+        <end_date>2025-12-05</end_date>
+        <impressions>150000</impressions>
+        <clicks>9000</clicks>
+        <conversions>900</conversions>
+        <total_spend>500.00</total_spend>
+        <revenue>45000.00</revenue>
+        <avg_order_value>50.00</avg_order_value>
+        <customer_count>900</customer_count>
+        <metrics>
+          <ctr_percent>6.0</ctr_percent>
+          <cpc>0.06</cpc>
+          <cpa>0.56</cpa>
+          <roas>90.0</roas>
+          <roi_percent>8900</roi_percent>
+        </metrics>
+      </campaign>
+    </records>
+  </table>
+
+  <metrics_definitions>
+    <metric>
+      <name>CTR (Click-Through Rate) %</name>
+      <formula>(Clicks / Impressions) * 100</formula>
+      <description>Shows the percentage of ad impressions that resulted in clicks</description>
+      <business_use>Measures ad creative effectiveness and relevance to target audience</business_use>
+    </metric>
+    <metric>
+      <name>CPC (Cost Per Click)</name>
+      <formula>Total Spend / Clicks</formula>
+      <description>Average cost to acquire one click from target audience</description>
+      <business_use>Evaluates bidding strategy efficiency and platform costs</business_use>
+    </metric>
+    <metric>
+      <name>CPA (Cost Per Acquisition)</name>
+      <formula>Total Spend / Conversions</formula>
+      <description>Average cost to achieve one conversion or customer acquisition</description>
+      <business_use>Determines profitability threshold and budget allocation</business_use>
+    </metric>
+    <metric>
+      <name>ROAS (Return on Ad Spend)</name>
+      <formula>Revenue / Total Spend</formula>
+      <description>Revenue generated for every $1 spent on ads (profit multiple)</description>
+      <business_use>Primary profitability metric - guides budget reallocation decisions</business_use>
+    </metric>
+    <metric>
+      <name>ROI % (Return on Investment)</name>
+      <formula>((Revenue - Spend) / Spend) * 100</formula>
+      <description>Percentage profit margin on advertising investment</description>
+      <business_use>Shows net return as percentage - used for comparative performance analysis</business_use>
+    </metric>
+  </metrics_definitions>
+
+  <performance_summary>
+    <best_performer>
+      <campaign_id>5</campaign_id>
+      <campaign_name>Email Marketing - Retargeting</campaign_name>
+      <metric_type>ROAS</metric_type>
+      <metric_value>90.0</metric_value>
+      <insight>Highest ROI with exceptional cost efficiency - recommended for increased budget allocation</insight>
+    </best_performer>
+    <average_metrics>
+      <avg_ctr>3.28</avg_ctr>
+      <avg_cpc>1.84</avg_cpc>
+      <avg_cpa>16.71</avg_cpa>
+      <avg_roas>24.38</avg_roas>
+      <avg_roi>3738</avg_roi>
+    </average_metrics>
+  </performance_summary>
+
+</ad_campaigns_database>
