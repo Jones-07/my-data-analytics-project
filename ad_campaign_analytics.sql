@@ -3,7 +3,7 @@
 -- Marketing Performance Measurement and Metrics Analysis
 -- ===================================================================
 -- Purpose: Track and analyze ad campaign performance using key marketing
---          metrics (CTR, CPC, CPA, ROAS, ROI) for data-driven decisions
+--          metrics (CTR, CPC, CPA, ROAS, ROI, Net Revenue) for data-driven decisions
 -- Created: December 5, 2025
 -- ===================================================================
 
@@ -38,35 +38,39 @@ INSERT INTO ad_campaigns VALUES
 -- 
 -- Metrics Calculated:
 -- CTR_pct: Click-Through Rate (%) = (Clicks/Impressions)*100
---          Shows percentage of ad impressions that resulted in clicks
+--   Shows percentage of ad impressions that resulted in clicks
 -- 
 -- CPC: Cost Per Click = Total Spend/Clicks
---      Average cost to acquire one click from target audience
+--   Average cost to acquire one click from target audience
 -- 
 -- CPA: Cost Per Acquisition = Total Spend/Conversions
---      Average cost to achieve one conversion/customer
+--   Average cost to achieve one conversion/customer
 -- 
 -- ROAS: Return on Ad Spend = Revenue/Total Spend
---       Revenue generated for every $1 spent on ads (profit multiple)
---       Higher ROAS = More profitable campaign
+--   Revenue generated for every $1 spent on ads (profit multiple)
+--   Higher ROAS = More profitable campaign
 -- 
 -- ROI_pct: Return on Investment (%) = (Revenue-Spend)/Spend*100
---          Percentage profit margin on advertising investment
+--   Percentage profit margin on advertising investment
+-- 
+-- Net_Revenue: Net Revenue = Revenue - Total Spend
+--   Actual profit after deducting advertising spend from revenue
+--   Positive value = profitable campaign; Negative = loss-making
 -- ===================================================================
-
 SELECT 
-  campaign_id as ID,
-  campaign_name as Campaign,
-  platform as Platform,
-  impressions as Impressions,
-  clicks as Clicks,
-  conversions as Conversions,
-  total_spend as Spend,
-  revenue as Revenue,
-  ROUND(CAST(clicks AS FLOAT)/impressions*100,2) as CTR_pct,
-  ROUND(total_spend/CAST(clicks AS FLOAT),2) as CPC,
-  ROUND(total_spend/CAST(conversions AS FLOAT),2) as CPA,
-  ROUND(revenue/total_spend,2) as ROAS,
-  ROUND((revenue-total_spend)/total_spend*100,2) as ROI_pct
+    campaign_id as ID,
+    campaign_name as Campaign,
+    platform as Platform,
+    impressions as Impressions,
+    clicks as Clicks,
+    conversions as Conversions,
+    total_spend as Spend,
+    revenue as Revenue,
+    ROUND(CAST(clicks AS FLOAT)/impressions*100,2) as CTR_pct,
+    ROUND(total_spend/CAST(clicks AS FLOAT),2) as CPC,
+    ROUND(total_spend/CAST(conversions AS FLOAT),2) as CPA,
+    ROUND(revenue/total_spend,2) as ROAS,
+    ROUND((revenue-total_spend)/total_spend*100,2) as ROI_pct,
+    ROUND(revenue - total_spend, 2) as Net_Revenue
 FROM ad_campaigns
 ORDER BY ROAS DESC;
