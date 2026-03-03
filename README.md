@@ -29,13 +29,16 @@ This project contains SQL scripts and data analytics for measuring and analyzing
 **Formula**: `((Revenue - Spend) / Spend) × 100`
 - Percentage profit margin on advertising investment
 
-## Sample Campaign Results
+### 6. Net Revenue
+**Formula**: `Revenue - Total Spend`
+- Actual profit after deducting advertising spend from revenue
+- Positive value = profitable campaign; Negative = loss-making campaign
+- Provides a clear absolute dollar view of campaign profitability beyond ratios like ROAS and ROI
 
-Email Marketing achieves the best ROAS at 90.0 with only 6% CTR but strong conversion optimization.
-Facebook Holiday campaign achieves 14.4 ROAS with solid 3% CTR.
+## Sample Campaign Results
+Email Marketing achieves the best ROAS at 90.0 with only 6% CTR but strong conversion optimization. Facebook Holiday campaign achieves 14.4 ROAS with solid 3% CTR.
 
 ## How to Use
-
 1. Execute `ad_campaign_analytics.sql` in your SQL environment
 2. The script creates the table and inserts sample data
 3. The final SELECT query generates a comprehensive performance report
@@ -47,7 +50,6 @@ Facebook Holiday campaign achieves 14.4 ROAS with solid 3% CTR.
 - Focus: Marketing Analytics and Business Intelligence
 
 ## Getting Started
-
 Copy the SQL script and execute in:
 - SQLite Online (sqliteonline.com)
 - MySQL Workbench
@@ -61,5 +63,4 @@ Copy the SQL script and execute in:
 - Add multi-platform aggregation
 - Include customer lifetime value (LTV) calculations
 
----
-Last Updated: December 5, 2025
+Last Updated: March 3, 2026
